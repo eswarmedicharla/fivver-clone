@@ -18,14 +18,32 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />
+      element: <Layout />,
+      children:[
+        {
+          path:"/gigs",
+          element: <Gigs/>
+        },
+        {
+          path:"/gig",
+          element: <Gig/>
+        },
+        {
+          path:"/",
+          element: <Home/>
+        },
+        {
+          path:"/",
+          element: <Home/>
+        },
+      ]
     }
   ]);
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+return (
+  <div>
+    <RouterProvider router={router} />
+  </div>
+);
 }
 
 export default App;

@@ -2,26 +2,27 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { cards } from "../../Data";
-import CardsCat from "../catCard/CardsCat";
-
-export default function SimpleSlider() {
+import PropTypes from 'prop-types';
+export default function SimpleSlider({children,slidesToShow,slidesToScroll }) {
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5 ,
-    slidesToScroll: 1
+    slidesToShow: slidesToShow ,
+    slidesToScroll: slidesToScroll
   };
   return (
     <div className="slider">
       <div className="container">
         <Slider {...settings}>
-          {cards.map(card => (
-            <CardsCat item={card} key={card.id}/>
-          ))}
+           {children}
         </Slider>
       </div>
     </div>
   );
 }
+SimpleSlider.propTypes = {
+  children: PropTypes.node.isRequired,
+  slidesToShow: PropTypes.number.isRequired,
+  slidesToScroll: PropTypes.number.isRequired
+};

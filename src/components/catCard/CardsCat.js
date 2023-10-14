@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './CardsCat.scss'
 const CardsCat = ({ item }) => {
   return (
-    <Link to="/gigs/123">
+    <Link to="/gigs">
       <div className='cardsCat'>
         <img src={item.img} alt='' />
         <span className='desc'>{item.desc}</span>
@@ -13,6 +13,7 @@ const CardsCat = ({ item }) => {
     </Link>
   )
 }
+
 CardsCat.propTypes = {
   item: PropTypes.shape({
     img: PropTypes.string.isRequired,

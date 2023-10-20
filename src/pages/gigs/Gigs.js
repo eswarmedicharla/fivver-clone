@@ -7,9 +7,9 @@ const Gigs = () => {
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
 
-  const reSort =(type) =>{
-       setSort(type)
-       setOpen(false)
+  const reSort = (type) => {
+    setSort(type)
+    setOpen(false)
   }
   return (
     <div className='gigs'>
@@ -27,18 +27,18 @@ const Gigs = () => {
           <div className='right'>
             <span className='sortBy'>SortBy</span>
             <span className='sortType'>{sort === "sales" ? "Best Selling" : "Newest"}</span>
-            <img src='./images/downarrow.png' alt='' onClick={() => setOpen(!open)}/>
-          {open && 
-           ( <div className='rightmenu'>
-           { sort === "sales" ? <span onClick={() => reSort("createdAt")}>Newest</span>
-            :<span onClick={() => reSort("sales")}>Best Selling</span>}
-          </div>)}
+            <img src='./images/downarrow.png' alt='' onClick={() => setOpen(!open)} />
+            {open &&
+              (<div className='rightmenu'>
+                {sort === "sales" ? <span onClick={() => reSort("createdAt")}>Newest</span>
+                  : <span onClick={() => reSort("sales")}>Best Selling</span>}
+              </div>)}
           </div>
         </div>
-        <div className='cards'> 
-            {gigs.map(gig =>(
-               <GigCard key={gig.id} item={gig}/>
-            ))}
+        <div className='cards'>
+          {gigs.map(gig => (
+            <GigCard key={gig.id} item={gig} />
+          ))}
         </div>
       </div>
     </div>

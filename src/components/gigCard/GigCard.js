@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // import AiFillStar, { AiFillHeart } from "react-icons/ai/index";
 const GigCard = ({ item }) => {
   return (
-    <Link to='/gig/123' className='link'>
+    <Link to='/gig' className='link'>
       <div className='gigCard'>
         <img src={item.img} alt='' />
         <div className='info'>
